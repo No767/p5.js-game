@@ -14,7 +14,11 @@ function draw() {
   translate(shapesX, shapesY);
   wand();
   keyPressed();
+  anotherKeyPressed();
   shapesX = shapesX + 1.5;
+  if (pressedR) {
+    rotateX(360)
+  }
   pop();
 }
 
@@ -33,4 +37,13 @@ function keyPressed() {
     } else {
         jump = false;
     }
+}
+
+function anotherKeyPressed() {
+  if (keyCode === UP_ARROW) {
+    print(r)
+    pressedR = true;
+  } else {
+    pressedR = false;
+  }
 }
